@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require("bootstrap")
+require("../includes/slides.js")
 
 Rails.start()
 Turbolinks.start()

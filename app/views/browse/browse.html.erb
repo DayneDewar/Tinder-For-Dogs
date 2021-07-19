@@ -1,1 +1,10 @@
-browse users
+<ul id="slides"> 
+  <% @dogs.each do |dog| %>
+    <div class="slide" data-id="<%= dog.id %>">
+      <li><%= dog.dog_name %></li>
+    </div>
+  <% end %>
+</ul>
+
+<button class="controls" id="decline">No</button>
+<button class="controls" id="approve">Yes</button>

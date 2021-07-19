@@ -1,6 +1,6 @@
 class BrowseController < ApplicationController
     def browse
-        @dogs = Account.all
+        @dogs = Account.where.not(id: current_account.id)
     end
 
     def approve
