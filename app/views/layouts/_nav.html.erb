@@ -4,10 +4,23 @@
         <span class="fs-4">Pricing example</span>
       </a>
 
-      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
-        <a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
-      </nav>
-    </div>
+      <% if account_signed_in? %>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <%= link_to "Browse", "#", class: "me-3 py-2 text-dark"%>
+          <%= link_to "My Matches", "#", class: "me-3 py-2 text-dark"%>
+          <%= link_to "Settings", "#", class: "me-3 py-2 text-dark"%>
+        </nav>
+
+          <%= button_to "Sign Out", destroy_account_session_path, class:"me-3 btn btn-lg btn-secondary", method: :delete %>
+        
+      <% else %>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="#">Pricing</a>
+        </nav>
+
+        <%= link_to "Sign In", new_account_session_path, class: "btn btn-lg btn-primary me-3"%>
+        <%= link_to "Sign Up", new_account_registration_path, class: "btn btn-lg btn-secondary me-3"%>
+      <% end %>
+</div>
