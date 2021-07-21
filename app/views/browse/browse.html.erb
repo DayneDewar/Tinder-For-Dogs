@@ -1,10 +1,12 @@
 <ul id="slides"> 
-  <% @dogs.each do |dog| %>
-    <div class="slide" data-id="<%= dog.id %>">
+  <% @dogs.each_with_index do |dog, index| %>
+    <div class="slide <%= 'showing' if index == 0 %>" data-id="<%= dog.id %>">
       <li><%= dog.dog_name %></li>
     </div>
   <% end %>
 </ul>
 
-<button class="controls" id="decline">No</button>
-<button class="controls" id="approve">Yes</button>
+<div id="slide-controls">
+  <span id="decline"><i class="fas fa-times fa-2x"></i></span>
+  <span id="approve"><i class="fas fa-paw fa-2x"></i></span>
+</div>

@@ -1,7 +1,6 @@
 $(function() {
   var $activeSlide = $('#slides .slide:first-child');
-
-  $activeSlide.addClass("showing")
+//   $activeSlide.addClass("showing")
 
   $("#decline").on("click", function() {
       nextSlide('decline')
@@ -16,14 +15,11 @@ $(function() {
       $activeSlide = $activeSlide.next(".slide")
 
       if (action == "approve") {
-
+          console.log(action)
       } else {
-
+        console.log(action)
       }
 
       $activeSlide.addClass("showing")
-        // slides[currentSlide].className = 'slide';
-        // currentSlide = (currentSlide+1)%slides.length;
-        // slides[currentSlide].className = 'slide showing';
   }
 }); 
