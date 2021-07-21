@@ -15,7 +15,7 @@ $(function() {
       $activeSlide = $activeSlide.next(".slide")
 
       if (action == "approve") {
-          console.log(action)
+        console.log(action)
       } else {
         console.log(action)
       }

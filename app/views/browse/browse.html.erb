@@ -1,8 +1,14 @@
 <ul id="slides"> 
   <% @dogs.each_with_index do |dog, index| %>
-    <div class="slide <%= 'showing' if index == 0 %>" data-id="<%= dog.id %>">
-      <li><%= dog.dog_name %></li>
-    </div>
+    <li class="slide <%= 'showing' if index == 0 %>" data-id="<%= dog.id %>">
+      <div class="image-carousel" style="background-image: url('<%= url_for dog.images.first %>')">
+      <%#= image_tag dog.images.first, width: "200px" %>
+      </div>
+      <div class="dog-details">
+        <span class="dog-name"><%= dog.dog_name %></span>, 2 yo<br />
+        <i class="fa fa-map-marker"></i> Location
+      </div>
+    </li>
   <% end %>
 </ul>
 
