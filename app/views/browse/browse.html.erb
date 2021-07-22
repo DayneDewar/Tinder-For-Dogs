@@ -2,7 +2,6 @@
   <% @dogs.each_with_index do |dog, index| %>
     <li class="slide <%= 'showing' if index == 0 %>" data-id="<%= dog.id %>">
       <div class="image-carousel" style="background-image: url('<%= url_for dog.images.first %>')">
-      <%#= image_tag dog.images.first, width: "200px" %>
       </div>
       <div class="dog-details">
         <span class="dog-name"><%= dog.dog_name %></span>, 2 yo<br />
