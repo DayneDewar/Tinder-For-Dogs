@@ -1,8 +1,17 @@
-.match-title {
+.match-tile {
     width: 200px;
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     cursor: pointer;
+
+    p {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        margin: 0;
+        font-weight: bold;
+    }
 }

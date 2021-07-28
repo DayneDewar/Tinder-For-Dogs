@@ -11,6 +11,8 @@ import "channels"
 require("bootstrap")
 require("@fortawesome/fontawesome-free")
 require("../includes/slides.js")
+require("../includes/matches.js")
+
 
 Rails.start()
 Turbolinks.start()
