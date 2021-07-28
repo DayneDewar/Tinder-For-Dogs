@@ -5,6 +5,11 @@ class BrowseController < ApplicationController
         @dogs = Account.where.not(id: liked_account_ids)
     end
 
+    def matches
+        @matches = current_account.matches
+    end
+
+
     def approve
         account_id = params[:id]
         logger.debug "User id is matching #{account_id}"
