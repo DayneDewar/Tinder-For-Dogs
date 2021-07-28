@@ -4,6 +4,7 @@ class BrowseController < ApplicationController
     end
 
     def approve
+        logger.debug "User id is matching #{params[:id]}"
     end
 
     def decline

@@ -5,8 +5,16 @@ $(function() {
   $("#decline").on("click", function() {
       nextSlide('decline')
   })
-
+  
   $("#approve").on("click", function() {
+    var user_id = $activeSlide.data("id");
+
+    $.ajax({
+      method: "POST",
+      url: "/approve/" + user_id,
+      dataType: "ajax"
+    })
+    console.log(user_id)
     nextSlide('approve')
   })
 
