@@ -10,8 +10,7 @@ import "channels"
 
 require("bootstrap")
 require("@fortawesome/fontawesome-free")
-require("../includes/slides.js")
-require("../includes/matches.js")
+require("../includes/browse.js")
 
 
 Rails.start()

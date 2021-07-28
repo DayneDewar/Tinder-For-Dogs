@@ -3,12 +3,8 @@ class BrowseController < ApplicationController
         liked_account_ids = Like.where(account_id: current_account.id).map(&:liked_account_id)
         liked_account_ids << current_account.id
         @dogs = Account.where.not(id: liked_account_ids)
-    end
-
-    def matches
         @matches = current_account.matches
     end
-
 
     def approve
         account_id = params[:id]
