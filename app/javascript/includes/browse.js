@@ -2,9 +2,10 @@ $(function() {
   var $activeSlide = $('#slides .slide:first-child');
 //   $activeSlide.addClass("showing")
 
-  $(".match-tile").on("click", function(){
+  $(".match-tile").on("click", function() {
         var account_id = $(this).data("id")
         console.log(account_id);
+        $("#conversation").show()
   })
   $("#decline").on("click", function() {
       nextSlide('decline')
