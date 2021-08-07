@@ -1,0 +1,32 @@
+<div id="conversation">
+    <div class="row">
+        <div class="col-12 top-bar">
+            <i class="fa fa-times text-muted float-end close-convo"></i>
+            <%= link_to image_tag(@dogs.first.images.first, width: "40px", height: "40px", class: "profile-thumb rounded-circle me-3 ms-2"), "#" %>
+
+            <p class="text-muted mt-1"> You matched with <%= @dogs.first.dog_name%> on 08/06/2021.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <p> You have matched with <span><%= @dogs.first.dog_name%></span> <%= time_ago_in_words @dogs.first.created_at %> ago </p>
+
+            <%= link_to image_tag(@dogs.first.images.first, width: "200px", height: "200px", class: "rounded-circle mt-3 mb-5"), "#" %>
+
+            <p> Send them a message and make them smile </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-5 bottom-bar">
+            <form>
+                <div class="input-group">
+                    <input type="text" name="message" value="" placeholder="Enter your message" class="form-control form-control-lg">
+                    
+                    <div class="input-group-appended">
+                        <input type="submit" name="submit" value="Send" class="btn btn-success btn-lg ps-5 pe-5">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -34,36 +34,10 @@
     </ul>
 
         <div id="slide-controls">
-        <span id="decline"><i class="fas fa-times fa-2x"></i></span>
-        <span id="approve"><i class="fas fa-paw fa-2x"></i></span>
+            <span id="decline"><i class="fas fa-times fa-2x"></i></span>
+            <span id="approve"><i class="fas fa-paw fa-2x"></i></span>
         </div>
-    </div>
-</div>
 
-<div id="conversation">
-    <div class="row">
-        <div class="col-12 top-bar">
-            <%# <%= link_to image_tag(@dogs.first.images.first, width: "40px", height: "40px", class: "profile-thumb rounded-circle me-3 ms-2"), "$" %> %>
-
-            <%# <span><%= @dogs.first.dog_name%></span> %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <%# <p> You have matched with <span><%= @dogs.first.dog_name%>
-            <%# </span> <%= time_ago_in_words @dogs.first.created_at %> ago </p> %> %>
-
-                <%# <%= link_to image_tag(@dogs.first.images.first, width: "200px", height: "200px", class: "profile-thumb rounded-circle me-3 ms-2"), "$" %> %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <form>
-                <div class="form-group">
-                    <input type="text" name="message" value="" placeholder="Enter you Message">
-                    <input type="submit" name="submit" value="send" class="btn btn-sucess">
-                </div>
-            </form>
-        </div>
+        <%= render "browse/conversation" %>
     </div>
 </div>
