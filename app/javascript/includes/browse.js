@@ -4,7 +4,13 @@ $(function() {
 
   $(".match-tile").on("click", function() {
         var account_id = $(this).data("id")
-        $("#conversation").show()
+
+        $.ajax({
+          url: "/get/conversation/" + account_id,
+          method: "POST",
+          dataType: "script"
+        })
+        // $("#conversation").show()
   })
 
   $(".close-convo").on("click", function() {
@@ -18,8 +24,8 @@ $(function() {
     var user_id = $activeSlide.data("id");
 
     $.ajax({
-      method: "POST",
       url: "/approve/" + user_id,
+      method: "POST",
       dataType: "ajax"
     })
     console.log(user_id)

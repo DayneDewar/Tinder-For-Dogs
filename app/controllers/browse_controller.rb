@@ -24,4 +24,15 @@ class BrowseController < ApplicationController
     def decline
     end
 
+    def conversation
+        @profile = Account.find(params[:id])
+
+        if @profile.present?
+            respond_to do |format|
+                format.js {
+                    render "browse/conversation"
+                }
+            end
+        end
+    end
 end
