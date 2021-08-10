@@ -1,14 +1,14 @@
     <div class="row">
         <div class="col-12 top-bar">
-            <i class="fa fa-times text-muted float-end close-convo"></i>
+            <i class="fa fa-times text-muted float-end" id="close-convo" ></i>
             <%= link_to image_tag(@profile.images.first, width: "40px", height: "40px", class: "profile-thumb rounded-circle me-3 ms-2"), "#" if @profile.images.attached?%>
 
-            <p class="text-muted mt-1"> You matched with <%= @profile.dog_name%> on 08/06/2021.</p>
+            <p class="text-muted mt-1"> You matched with <%= @profile.dog_name%> on <%= @match.created_at.strftime("%m/%d/%Y")%>.</p>
         </div>
     </div>
     <div class="row">
         <div class="col-12 text-center">
-            <p> You have matched with <span><%= @profile.dog_name%></span> <%= time_ago_in_words @profile.created_at %> ago </p>
+            <p> You have matched with <span><%= @profile.dog_name%></span> <%= time_ago_in_words @match.created_at %> ago </p>
 
             <%= link_to image_tag(@profile.images.first, width: "200px", height: "200px", class: "rounded-circle mt-3 mb-5"), "#" if @profile.images.attached? %>
 

@@ -13,7 +13,7 @@ $(function() {
         // $("#conversation").show()
   })
 
-  $(".close-convo").on("click", function() {
+  $("#close-convo").on("click", function() {
     $("#conversation").hide()
   })
   $("#decline").on("click", function() {

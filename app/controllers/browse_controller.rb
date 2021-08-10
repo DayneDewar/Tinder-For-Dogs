@@ -26,6 +26,8 @@ class BrowseController < ApplicationController
 
     def conversation
         @profile = Account.find(params[:id])
+        likes = Like.where(account_id: current_account.id, liked_account_id: params[:id])
+        @match = likes.first if likes.size > 0
 
         if @profile.present?
             respond_to do |format|
