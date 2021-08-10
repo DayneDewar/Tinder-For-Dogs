@@ -24,10 +24,15 @@ class BrowseController < ApplicationController
     def decline
     end
 
-    def conversation
+    def open_conversation
         @profile = Account.find(params[:id])
         likes = Like.where(account_id: current_account.id, liked_account_id: params[:id])
         @match = likes.first if likes.size > 0
+
+        conversation = Conversation.between(params[:id], current_account.id)
+
+        @conversation = conversation.size > 0 ? conversation.first : Conversation.new
+        @message = @conversation.messages.build
 
         if @profile.present?
             respond_to do |format|
